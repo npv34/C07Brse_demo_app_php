@@ -1,16 +1,14 @@
 <?php
+include_once("./handle/funtion.php");
+$users = readFileToData("./data/user.json");
 // kiem tra method request
 // $_SERVER bien toan cuc, chua thong tin server
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // get data tu request
     $email = $_REQUEST['email'];
     $password = $_REQUEST['password'];
-
-    if (
-        $email == 'admin@example.com'
-        && $password == '1234'
-    ) {
-        // chuyen huong
+    $checkUser = checkUser($users, $email, $password);
+    if ($checkUser) {
         header('Location: home.php');
     } else {
         $errMsg = 'Account not exist';
