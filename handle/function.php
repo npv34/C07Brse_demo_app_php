@@ -37,3 +37,25 @@ function createUser($filePath,$name, $email, $password){
         writeFileToData($filePath, $users);
 }
 
+function getAllUsers($filePath) {
+    return readFileToData($filePath);
+}
+
+function deleteUser($filePath, $index) {
+    $users = readFileToData($filePath);
+    unset($users[$index]);
+    writeFileToData($filePath, $users);
+}
+
+function findByIndex($filePath, $index){
+    $users = readFileToData($filePath);
+    return $users[$index];
+}
+
+function updateUser($filePath, $index, $name, $email) {
+    $users = readFileToData($filePath);
+    $users[$index]['email'] = $email;
+    $users[$index]['name'] = $name;
+    writeFileToData($filePath, $users);
+}
+

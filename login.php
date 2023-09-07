@@ -1,5 +1,5 @@
 <?php
-include_once("./handle/funtion.php");
+include_once("./handle/function.php");
 $users = readFileToData("./data/user.json");
 // kiem tra method request
 // $_SERVER bien toan cuc, chua thong tin server

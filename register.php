@@ -1,5 +1,5 @@
 <?php
-include_once "./handle/funtion.php";
+include_once "./handle/function.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
